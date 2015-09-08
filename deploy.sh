@@ -1,5 +1,6 @@
 #! /bin/bash
 
 # Push to dokku-alt
-git remote add dokku dokku@178.62.19.139:slk4connect
+# App will be deployed here: http://slk4connect.segouin.me
+git remote add dokku dokku@segouin.me:slk4connect
 git push dokku master

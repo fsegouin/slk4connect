@@ -2,7 +2,7 @@ package connect4
 
 import (
 	"bytes"
-	"db"
+	"github.com/fsegouin/slk4connect/db"
 )
 
 var (

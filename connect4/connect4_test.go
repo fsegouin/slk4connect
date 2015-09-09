@@ -1,7 +1,7 @@
 package connect4
 
 import (
-	"github.com/stretchr/testify/assert"
+	"github.com/fsegouin/slk4connect/Godeps/_workspace/src/github.com/stretchr/testify/assert"
 	"testing"
 )
 

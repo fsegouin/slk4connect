@@ -1,7 +1,7 @@
 package db
 
 import (
-	"github.com/fzzy/radix/redis"
+	"github.com/fsegouin/slk4connect/Godeps/_workspace/src/github.com/fzzy/radix/redis"
 	"log"
 	"sync"
 )

@@ -1,1 +1,1 @@
-web ./bin/slk4connect -port $PORT
+web: slk4connect -port=$PORT

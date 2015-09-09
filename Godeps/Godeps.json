@@ -1,0 +1,19 @@
+{
+	"ImportPath": "github.com/fsegouin/slk4connect",
+	"GoVersion": "go1.5",
+	"Packages": [
+		"./..."
+	],
+	"Deps": [
+		{
+			"ImportPath": "github.com/fzzy/radix/redis",
+			"Comment": "v0.5.6-2-g3528e87",
+			"Rev": "3528e87a910c6730810cec1be187f989d7d9442a"
+		},
+		{
+			"ImportPath": "github.com/stretchr/testify/assert",
+			"Comment": "v1.0-40-g7c2b1e5",
+			"Rev": "7c2b1e5640dcf2631213ca962d892bffa1e08860"
+		}
+	]
+}

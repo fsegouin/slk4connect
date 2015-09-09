@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"net/http"
+    "os"
 )
 
 func indexHandler(w http.ResponseWriter, r *http.Request) {
@@ -26,5 +27,5 @@ func main() {
 		http.ServeFile(w, r, r.URL.Path[1:])
 	})
 
-	panic(http.ListenAndServe(":2003", nil))
+    panic(http.ListenAndServe(":"+os.Getenv("PORT"), nil))
 }

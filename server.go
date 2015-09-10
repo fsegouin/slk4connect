@@ -8,7 +8,7 @@ import (
 )
 
 type SlackResponse struct {
-	Attachments []Attachment `json:"attachements"`
+	Attachments []Attachment `json:"attachments"`
 }
 
 type Attachment struct {

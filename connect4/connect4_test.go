@@ -25,3 +25,17 @@ func TestStartGame(t *testing.T) {
 		}
 	}
 }
+
+func TestLoadGame(t *testing.T) {
+	StartGame(aGameId, aFirstPlayerId)
+
+	game, error := LoadGame(aGameId)
+
+	assert.Nil(t, error)
+	assert.NotNil(t, game)
+	assert.Equal(t, game.GameId, aGameId)
+	assert.Equal(t, game.GamerOneId, aFirstPlayerId)
+	assert.Equal(t, game.LastPlayer, false)
+	assert.Equal(t, len(game.State), 7, "Table should have 7 columns")
+	assert.Equal(t, len(game.State[0]), 6, "Table should have 6 columns")
+}

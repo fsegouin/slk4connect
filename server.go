@@ -40,7 +40,8 @@ func webhookHandler(w http.ResponseWriter, r *http.Request) {
 
 	jsonResponse, _ := json.Marshal(response)
 
-	fmt.Fprintf(w, string(jsonResponse))
+	w.Header().Set("Content-Type", "application/json")
+	w.Write(jsonResponse)
 }
 
 func main() {

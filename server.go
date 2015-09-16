@@ -44,6 +44,7 @@ func webhookHandler(w http.ResponseWriter, r *http.Request) {
 	r.ParseForm()
 
 	response := SlackResponse{}
+	fmt.Println("path", r.Form)
 	response.Channel = r.Form["channel_name"][0]
 	response.Text = ":red_circle: :red_circle: :red_circle:"
 	//response.Attachments = append(response.Attachments, attachement)

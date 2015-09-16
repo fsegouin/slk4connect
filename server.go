@@ -1,10 +1,15 @@
 package main
 
 import (
+	"bytes"
 	"encoding/json"
 	"fmt"
 	"net/http"
 	"os"
+)
+
+var (
+	url = "https://hooks.slack.com/services/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"
 )
 
 type SlackResponse struct {
@@ -42,8 +47,19 @@ func webhookHandler(w http.ResponseWriter, r *http.Request) {
 
 	jsonResponse, _ := json.Marshal(response)
 
-	w.Header().Set("Content-Type", "application/json")
-	w.Write(jsonResponse)
+	req, _ := http.NewRequest("POST", url, bytes.NewBuffer(jsonResponse))
+	req.Header.Set("Content-Type", "application/json")
+
+	client := &http.Client{}
+	resp, err := client.Do(req)
+
+	if err != nil {
+		panic(err)
+	}
+
+	defer resp.Body.Close()
+
+	fmt.Fprintf(w, "")
 }
 
 func main() {

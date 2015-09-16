@@ -13,6 +13,7 @@ var (
 )
 
 type SlackResponse struct {
+	Channel     string       `json:"channel"`
 	Text        string       `json:"text"`
 	Attachments []Attachment `json:"attachments"`
 }
@@ -40,8 +41,10 @@ func webhookHandler(w http.ResponseWriter, r *http.Request) {
 	//	"https://media.giphy.com/media/yoJC2i7kpPtZrvAZR6/giphy.gif",
 	//	"#00ff00",
 	//}
+	r.ParseForm()
 
 	response := SlackResponse{}
+	response.Channel = r.Form["channel_name"][0]
 	response.Text = ":red_circle: :red_circle: :red_circle:"
 	//response.Attachments = append(response.Attachments, attachement)
 

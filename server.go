@@ -8,6 +8,7 @@ import (
 )
 
 type SlackResponse struct {
+	Text        string       `json:"text"`
 	Attachments []Attachment `json:"attachments"`
 }
 
@@ -28,15 +29,16 @@ func indexHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func webhookHandler(w http.ResponseWriter, r *http.Request) {
-	attachement := Attachment{
-		"Connect 4!!!",
-		"Player 1 played",
-		"https://media.giphy.com/media/yoJC2i7kpPtZrvAZR6/giphy.gif",
-		"#00ff00",
-	}
+	//attachement := Attachment{
+	//	"Connect 4!!!",
+	//	"Player 1 played",
+	//	"https://media.giphy.com/media/yoJC2i7kpPtZrvAZR6/giphy.gif",
+	//	"#00ff00",
+	//}
 
 	response := SlackResponse{}
-	response.Attachments = append(response.Attachments, attachement)
+	response.Text = ":red_circle: :red_circle: :red_circle:"
+	//response.Attachments = append(response.Attachments, attachement)
 
 	jsonResponse, _ := json.Marshal(response)
 
